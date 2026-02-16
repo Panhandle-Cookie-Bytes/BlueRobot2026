@@ -1,0 +1,111 @@
+#include <Arduino.h>
+#include "PS2_CTL.hpp"
+#include "Config.h"
+#include "Hiwonder.hpp"
+#include "Robot_Arm.hpp"
+
+// Objects
+PS2_CTL ps2_ctrl;
+LeArm_t arm;
+Buzzer_t buzzer;
+Led_t led;
+
+// Servo Angle Variables (0-240 scale)
+float s1 = 120, s2 = 120, s3 = 120, s4 = 120, s5 = 120, s6 = 120;
+
+// Speed Constants
+const float fastStep = 3.5;  // Always for Servo 1
+const float slowStep = 1.1;  // Normal speed for others
+const float turboStep = 2.8; // Turbo speed for others
+
+// Button edge detection variables
+bool lastCross = false;
+bool lastCircle = false;
+bool lastSquare = false;
+bool lastTriangle = false;
+bool leftJoy = false;
+bool rightJoy = false;
+
+// Telemetry timing
+unsigned long lastTelemetry = 0;
+const unsigned long telemetryInterval = 1000; // 1 second
+
+void setup() {
+    Serial.begin(115200);
+
+    arm.init();
+    buzzer.init(IO_BUZZER);
+    led.init(IO_LED);
+
+    ps2_ctrl.init();
+    arm.reset(1000);
+}
+
+void loop() {
+  ps2_ctrl.receive_msg();
+  // -------------------------
+  // CROSS PRESET
+  // -------------------------
+  if (ps2_ctrl.keyvalue.bit_cross && !lastCross) {
+    arm.knot_run(1, 0 * 4.16, 800);
+    arm.knot_run(2, 125.60 * 4.16, 800);
+    arm.knot_run(3, 81.50 * 4.16, 800);
+    arm.knot_run(4, 20.90 * 4.16, 800);
+    arm.knot_run(5, 137.60 * 4.16, 800);
+    arm.knot_run(6, 40.70 * 4.16, 800);
+  }
+
+
+  // -------------------------
+  // CIRCLE PRESET
+  // -------------------------
+  if (ps2_ctrl.keyvalue.bit_circle && !lastCircle) {
+    arm.knot_run(1, 120 * 4.16, 800);
+    arm.knot_run(2, 120 * 4.16, 800);
+    arm.knot_run(3, 120 * 4.16, 800);
+    arm.knot_run(4, 120 * 4.16, 800);
+    arm.knot_run(5, 120 * 4.16, 800);
+    arm.knot_run(6, 120 * 4.16, 800);
+  }
+
+  // -------------------------
+  // SQUARE PRESET
+  // -------------------------
+  if (ps2_ctrl.keyvalue.bit_square && !lastSquare) {
+    arm.knot_run(1, 175 * 4.16, 800);
+    arm.knot_run(2, 175 * 4.16, 800);
+    arm.knot_run(3, 175 * 4.16, 800);
+    arm.knot_run(4, 175 * 4.16, 800);
+    arm.knot_run(5, 175 * 4.16, 800);
+    arm.knot_run(6, 175 * 4.16, 800);
+  }
+
+  // -------------------------
+  // TRIANGLE PRESET
+  // -------------------------
+  if (ps2_ctrl.keyvalue.bit_triangle && !lastTriangle) {
+    arm.knot_run(1, 210 * 4.16, 800);
+    arm.knot_run(2, 210 * 4.16, 800);
+    arm.knot_run(3, 210 * 4.16, 800);
+    arm.knot_run(4, 210 * 4.16, 800);
+    arm.knot_run(5, 210 * 4.16, 800);
+    arm.knot_run(6, 210 * 4.16, 800);
+  }
+
+  if (ps2_ctrl.keyvalue.bit_leftjoystick_press && !leftJoy) {
+    arm.knot_run(1, 210 * 4.16, 800);
+    arm.knot_run(2, 210 * 4.16, 800);
+    arm.knot_run(3, 210 * 4.16, 800);
+    arm.knot_run(4, 210 * 4.16, 800);
+    arm.knot_run(5, 210 * 4.16, 800);
+    arm.knot_run(6, 210 * 4.16, 800);
+  }
+
+  // Save button states (edge detection)
+  lastCross    = ps2_ctrl.keyvalue.bit_cross;
+  lastCircle   = ps2_ctrl.keyvalue.bit_circle;
+  lastSquare   = ps2_ctrl.keyvalue.bit_square;
+  lastTriangle = ps2_ctrl.keyvalue.bit_triangle;
+  leftJoy   = ps2_ctrl.keyvalue.bit_leftjoystick_press;
+  rightJoy = ps2_ctrl.keyvalue.bit_rightjoystick_press;
+}
