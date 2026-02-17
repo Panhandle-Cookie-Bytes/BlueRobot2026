@@ -11,27 +11,27 @@ BasicTest basicTestSequence;
 bool lastCross = false;
 
 void setup() {
-  Serial.begin(115200);
-  arm.init();
-  ps2_ctrl.init();
+    Serial.begin(115200);
+    arm.init();
+    ps2_ctrl.init();
 }
 
 void loop() {
-  ps2_ctrl.receive_msg();
+    ps2_ctrl.receive_msg();
 
-  if (ps2_ctrl.keyvalue.bit_cross) {
-    Serial.println("Cross is Pressed!!");
-  }
+    if (ps2_ctrl.keyvalue.bit_cross) {
+        Serial.println("Cross is Pressed!!");
+    }
 
-  // 2. Trigger the Sequence
-  if (ps2_ctrl.keyvalue.bit_cross && !lastCross) {
-    Serial.println("EDGE DETECTED: Starting Sequence...");
-    basicTestSequence.start();
-  }
+    // 2. Trigger the Sequence
+    if (ps2_ctrl.keyvalue.bit_cross && !lastCross) {
+        Serial.println("EDGE DETECTED: Starting Sequence...");
+        basicTestSequence.start();
+    }
 
-  // 3. Let the state machine process its timing
-  basicTestSequence.update();
+    // 3. Let the state machine process its timing
+    basicTestSequence.update();
 
-  // 4. Update edge detection
-  lastCross = ps2_ctrl.keyvalue.bit_cross;
+    // 4. Update edge detection
+    lastCross = ps2_ctrl.keyvalue.bit_cross;
 }

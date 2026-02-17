@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3baa2cbe-1606-462f-a353-cafd56b6784b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/code" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/preset locations" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/code" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/code.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/preset locations" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/presetlocations.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

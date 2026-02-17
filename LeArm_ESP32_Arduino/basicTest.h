@@ -7,7 +7,7 @@
 // Tell this file that 'arm' is defined in the main .ino
 extern LeArm_t arm;
 
-enum SequenceState { IDLE, STEP_1, STEP_2, STEP_3, STEP_4, FINISHED };
+enum SequenceState { IDLE, STEP_1, STEP_2, STEP_3, STEP_4, STEP_5, STEP_6, STEP_7, STEP_8, FINISHED };
 
 class BasicTest {
 private:
@@ -45,19 +45,35 @@ public:
 
             switch (currentState) {
                 case STEP_1:
-                    moveArm(0, 125.60, 81.50, 20.90, 137.60, 40.70);
+                    moveArm(28, 132.10, 30.30, 39.90, 135.40, 40.90);
                     currentState = STEP_2;
                     break;
                 case STEP_2:
-                    moveArm(120, 120, 120, 120, 120, 120);
+                    moveArm(0, 132.10, 45.30, 66.00, 157.40, 40.90);
                     currentState = STEP_3;
                     break;
                 case STEP_3:
-                    moveArm(175, 175, 175, 175, 175, 175);
+                    moveArm(203.00, 132.10, 45.30, 66.00, 157.40, 40.90);
                     currentState = STEP_4;
                     break;
                 case STEP_4:
-                    moveArm(210, 210, 210, 210, 210, 210);
+                    moveArm(203.00, 132.10, 67.30, 0, 100.90, 213.60);
+                    currentState = STEP_5;
+                    break;
+                case STEP_5:
+                    moveArm(240.00, 132.10, 67.30, 0, 140.90, 213.60);
+                    currentState = STEP_6;
+                    break;
+                case STEP_6:
+                    moveArm(0, 132.10, 67.30, 0, 140.90, 213.60);
+                    currentState = STEP_7;
+                    break;
+                case STEP_7:
+                    moveArm(0, 132.10, 97.00, 0, 90.90, 127.80);
+                    currentState = STEP_8;
+                    break;
+                case STEP_8:
+                    moveArm(0, 132.10, 97.00, 0, 140.90, 127.80);
                     currentState = FINISHED;
                     break;
                 case FINISHED:
