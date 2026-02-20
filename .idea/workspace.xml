@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3baa2cbe-1606-462f-a353-cafd56b6784b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Rake.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Scoop.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Strainer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Trowel.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/code" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/code.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/preset locations" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/presetlocations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/basicTest.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="39lawOi7UH0Vnk66jnPpGV3IFOn" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,6 +61,11 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\techn\Downloads\PCB_Robot\BlueRobot2026\LeArm_ESP32_Arduino" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="3baa2cbe-1606-462f-a353-cafd56b6784b" name="Changes" comment="" />

@@ -1,37 +1,55 @@
 #include "Robot_Arm.hpp"
 #include "PS2_CTL.hpp"
-#include "basicTest.h"
+#include "Brush.h"
+#include "Scoop.h"
+#include "Strainer.h"
+#include "Rake.h"
 
-// 1. Global Objects
 LeArm_t arm;
 PS2_CTL ps2_ctrl;
-BasicTest basicTestSequence;
 
-// Edge detection variables
-bool lastCross = false;
+Brush BrushSequence;
+Scoop ScoopSequence;
+Strainer StrainerSequence;
+Rake RakeSequence;
+
+struct ButtonState {
+    bool cross = false, circle = false, square = false, triangle = false;
+};
+ButtonState lastState;
 
 void setup() {
     Serial.begin(115200);
     arm.init();
     ps2_ctrl.init();
+    Serial.println("System Ready.");
 }
 
 void loop() {
     ps2_ctrl.receive_msg();
 
-    if (ps2_ctrl.keyvalue.bit_cross) {
-        Serial.println("Cross is Pressed!!");
+    // check if any sequence is active
+    bool armBusy = BrushSequence.isRunning() || ScoopSequence.isRunning() ||
+                   StrainerSequence.isRunning() || RakeSequence.isRunning();
+
+    if (!armBusy) {
+        if (ps2_ctrl.keyvalue.bit_cross && !lastState.cross)         BrushSequence.start();
+        else if (ps2_ctrl.keyvalue.bit_circle && !lastState.circle)  ScoopSequence.start();
+        else if (ps2_ctrl.keyvalue.bit_triangle && !lastState.triangle) RakeSequence.start();
+        else if (ps2_ctrl.keyvalue.bit_square && !lastState.square)   StrainerSequence.start();
     }
 
-    // 2. Trigger the Sequence
-    if (ps2_ctrl.keyvalue.bit_cross && !lastCross) {
-        Serial.println("EDGE DETECTED: Starting Sequence...");
-        basicTestSequence.start();
-    }
+    // Always update
+    BrushSequence.update();
+    ScoopSequence.update();
+    StrainerSequence.update();
+    RakeSequence.update();
 
-    // 3. Let the state machine process its timing
-    basicTestSequence.update();
+    // Edge detection update
+    lastState.cross = ps2_ctrl.keyvalue.bit_cross;
+    lastState.circle = ps2_ctrl.keyvalue.bit_circle;
+    lastState.triangle = ps2_ctrl.keyvalue.bit_triangle;
+    lastState.square = ps2_ctrl.keyvalue.bit_square;
 
-    // 4. Update edge detection
-    lastCross = ps2_ctrl.keyvalue.bit_cross;
+    delay(10);
 }
