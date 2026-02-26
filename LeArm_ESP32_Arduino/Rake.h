@@ -12,7 +12,7 @@ private:
     enum SequenceState { IDLE, STEP_1, STEP_2, STEP_3, STEP_4, STEP_5, STEP_6, STEP_7, STEP_8, FINISHED };
     SequenceState currentState = IDLE;
     unsigned long lastStepTime = 0;
-    const int stepDelay = 2000;
+    const int stepDelay = 1000;
 
     void moveArm(float m1, float m2, float m3, float m4, float m5, float m6) {
         arm.knot_run(1, m1 * 4.16, 500);
