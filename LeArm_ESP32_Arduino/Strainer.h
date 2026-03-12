@@ -46,9 +46,9 @@ public:
             lastStepTime = millis();
 
             switch (currentState) {
-                case STEP_1: currentState = STEP_2; moveArm(0, 132.10, 45.30, 66.00, 157.40, 40.90); break;
-                case STEP_2: currentState = STEP_3; moveArm(203.00, 132.10, 45.30, 66.00, 157.40, 40.90); break;
-                case STEP_3: currentState = STEP_4; moveArm(203.00, 132.10, 67.30, 0, 100.90, 213.60); break;
+                case STEP_1: currentState = STEP_2; moveArm(0, 124.40, 131.00, 198.10, 104.50, 42.90); break;
+                case STEP_2: currentState = STEP_3; moveArm(240.00, 124.40, 131.00, 198.10, 104.50, 42.90); break;
+                case STEP_3: currentState = STEP_4; moveArm(240.0, 124.40, 131.00, 198.10, 144.10, 42.90); break;
                 case STEP_4: currentState = STEP_5; moveArm(240.00, 132.10, 67.30, 0, 140.90, 213.60); break;
                 case STEP_5: currentState = STEP_6; moveArm(0, 132.10, 67.30, 0, 140.90, 213.60); break;
                 case STEP_6: currentState = STEP_7; moveArm(0, 132.10, 97.00, 0, 90.90, 127.80); break;

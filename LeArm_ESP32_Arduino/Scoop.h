@@ -46,14 +46,16 @@ public:
             lastStepTime = millis();
 
             switch (currentState) {
-                case STEP_1: currentState = STEP_2; moveArm(0, 132.10, 45.30, 66.00, 157.40, 40.90); break;
-                case STEP_2: currentState = STEP_3; moveArm(150, 132.10, 45.30, 66.00, 157.40, 40.90); break;
-                case STEP_3: currentState = STEP_4; moveArm(150.00, 132.10, 67.30, 0, 100.90, 213.60); break;
-                case STEP_4: currentState = STEP_5; moveArm(150.00, 132.10, 67.30, 0, 140.90, 213.60); break;
-                case STEP_5: currentState = STEP_6; moveArm(0, 132.10, 67.30, 0, 140.90, 213.60); break;
-                case STEP_6: currentState = STEP_7; moveArm(0, 132.10, 97.00, 0, 90.90, 127.80); break;
-                case STEP_7: currentState = STEP_8; moveArm(0, 132.10, 97.00, 0, 140.90, 127.80); break;
-                case STEP_8: currentState = FINISHED; break;
+                case STEP_1: currentState = STEP_2; moveArm(40.50, 118.90, 120.00, 28.70, 138.70, 138.80); break;
+                case STEP_2: currentState = STEP_3; moveArm(240.00, 118.90, 120.00, 28.70, 138.70, 138.80); break;
+                case STEP_3: currentState = STEP_4; moveArm(142, 126.70, 176, 41.80, 175.00, 154.20); break;
+                case STEP_4: currentState = STEP_5; moveArm(142, 126.70, 176, 41.80, 175.00, 154.20); break;
+                case STEP_5: currentState = STEP_6; moveArm(142, 126.70, 176, 41.80, 175.00, 94.80); break;
+                case STEP_6: currentState = STEP_7; moveArm(142, 126.70, 176, 41.80, 175.00, 154.20); break;
+                case STEP_7: currentState = STEP_8; moveArm(142, 126.70, 176, 41.80, 175.00, 94.80); break;
+                case STEP_8: currentState = STEP_9; moveArm(142, 126.70, 176, 41.80, 175.00, 94.80); break;
+                case STEP_9: currentState = STEP_10; moveArm(142, 126.70, 176, 41.80, 175.00, 94.80); break;
+                case STEP_10: currentState = FINISHED; break;
                 case FINISHED:
                     Serial.println("Scoop Complete.");
                     currentState = IDLE;
