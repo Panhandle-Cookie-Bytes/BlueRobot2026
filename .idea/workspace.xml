@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3baa2cbe-1606-462f-a353-cafd56b6784b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Scoop.h" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Scoop.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
