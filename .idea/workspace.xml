@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/LeArm_ESP32_Arduino.ino" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Scoop.h" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Scoop.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Strainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/Strainer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LeArm_ESP32_Arduino/presetlocations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LeArm_ESP32_Arduino/presetlocations.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
