@@ -34,7 +34,7 @@ public:
             currentState = STEP_1;
             lastStepTime = millis(); // Trigger immediately
             // Force first move immediately
-            moveArm(28, 132.10, 30.30, 39.90, 135.40, 40.90);
+            moveArm(0.00, 125.60, 81.50, 43.00, 93.60, 120.00);
             Serial.println("Scoop Sequence Started...");
         }
     }
@@ -72,11 +72,11 @@ public:
                 case STEP_24: currentState = STEP_25; moveArm(185.50, 120.00, 6.60, 14.30, 70.50, 240.00); break;
                 case STEP_25: currentState = STEP_26; moveArm(185.50, 120.00, 45.10, 71.50, 71.60, 240.00); break;
                 case STEP_26: currentState = STEP_27; moveArm(240.00, 120.00, 45.10, 71.50, 133.20, 128.90); break;
-                case STEP_27: currentState = STEP_28; moveArm(240.00, 120.00, 97.90, 71.50, 133.20, 128.90); break;
-                case STEP_28: currentState = STEP_29; moveArm(240.00, 120.00, 97.90, 71.50, 133.20, 142.10); break;
-                case STEP_29: currentState = STEP_30; moveArm(240.00, 120.00, 97.90, 71.50, 133.20, 128.90); break;
-                case STEP_30: currentState = STEP_31; moveArm(240.00, 120.00, 97.90, 71.50, 133.20, 142.10); break;
-                case STEP_31: currentState = STEP_32; moveArm(240.00, 120.00, 97.90, 71.50, 133.20, 128.90); break;
+                case STEP_27: currentState = STEP_28; moveArm(240.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
+                case STEP_28: currentState = STEP_29; moveArm(240.00, 160.70, 91.40, 69.40, 133.20, 135.50); break;
+                case STEP_29: currentState = STEP_30; moveArm(240.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
+                case STEP_30: currentState = STEP_31; moveArm(240.00, 160.70, 91.40, 69.40, 133.20, 135.50); break;
+                case STEP_31: currentState = STEP_32; moveArm(240.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
                 case STEP_32: currentState = FINISHED; break;
                 case FINISHED:
                     Serial.println("Scoop Complete.");
