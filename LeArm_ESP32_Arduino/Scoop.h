@@ -9,7 +9,7 @@ extern LeArm_t arm;
 class Scoop {
 private:
     // Move enum inside the class
-    enum SequenceState { IDLE, STEP_1, STEP_2, STEP_3, STEP_4, STEP_5, STEP_6, STEP_7, STEP_8, STEP_9, STEP_10, STEP_11, STEP_12, STEP_13, STEP_14, STEP_15, STEP_16, STEP_17, STEP_18, STEP_19, STEP_20, STEP_21, STEP_22, STEP_23, STEP_24, STEP_25, STEP_26, STEP_27, STEP_28, STEP_29, STEP_30, STEP_31, STEP_32, STEP_33, STEP_34, FINISHED };
+    enum SequenceState { IDLE, STEP_1, STEP_2, STEP_3, STEP_4, STEP_5, STEP_6, STEP_7, STEP_8, STEP_9, STEP_10, STEP_11, STEP_12, STEP_13, STEP_14, STEP_15, STEP_16, STEP_17, STEP_18, STEP_19, STEP_20, STEP_21, STEP_22, STEP_23, STEP_24, STEP_25, STEP_26, STEP_27, STEP_28, STEP_29, STEP_30, STEP_31, STEP_32, STEP_33, STEP_34, STEP_35, FINISHED };
     SequenceState currentState = IDLE;
     unsigned long lastStepTime = 0;
     const int stepDelay = 1000;
@@ -56,9 +56,9 @@ public:
                 case STEP_8: currentState = STEP_9; moveArm(0.00, 125.60, 81.50, 43.00, 93.60, 120.00); break;
                 case STEP_9: currentState = STEP_10; moveArm(0.00, 120.00, 61.70, 81.50, 146.40, 111.30); break;
                 case STEP_10: currentState = STEP_11; moveArm(0.00, 120.00, 55.10, 95.50, 178.30, 111.30); break;
-                case STEP_11: currentState = STEP_12; moveArm(165.00, 120.00, 55.10, 95.80, 178.30, 111.30); break;
-                case STEP_12: currentState = STEP_13; moveArm(165.00, 120.00, 197.10, 179.40, 135.40, 224.60); break;
-                case STEP_13: currentState = STEP_14; moveArm(165.00, 120.00, 197.10, 179.40, 95.80, 224.60); break;
+                case STEP_11: currentState = STEP_12; moveArm(240.00, 120.00, 55.10, 95.80, 178.30, 111.30); break;
+                case STEP_12: currentState = STEP_13; moveArm(240.00, 120.00, 197.10, 179.40, 135.40, 224.60); break;
+                case STEP_13: currentState = STEP_14; moveArm(240.00, 120.00, 197.10, 179.40, 95.80, 224.60); break;
                 case STEP_14: currentState = STEP_15; moveArm(89.50, 120.00, 197.10, 179.40, 110.10, 224.60); break;
                 case STEP_15: currentState = STEP_16; moveArm(0.00, 120.00, 97.00, 67.20, 129.90, 86.00); break;
                 case STEP_16: currentState = STEP_17; moveArm(0.00, 120.00, 97.00, 67.20, 177.20, 86.00); break;
@@ -77,9 +77,10 @@ public:
                 case STEP_29: currentState = STEP_30; moveArm(165.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
                 case STEP_30: currentState = STEP_31; moveArm(165.00, 160.70, 91.40, 69.40, 133.20, 135.50); break;
                 case STEP_31: currentState = STEP_32; moveArm(165.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
-                case STEP_32: currentState = STEP_33; moveArm(165.00, 120.00, 59.50, 16.50, 80.40, 18.70); break;
-                case STEP_33: currentState = STEP_34; moveArm(165.00, 233.30, 59.50, 16.50, 80.40, 18.70); break;
-                case STEP_34: currentState = FINISHED; break;
+                case STEP_32: currentState = STEP_33; moveArm(165.00, 120.00, 91.40, 69.40, 133.20, 77.20); break;
+                case STEP_33: currentState = STEP_34; moveArm(165.00, 120.00, 59.50, 16.50, 80.40, 0.00); break;
+                case STEP_34: currentState = STEP_35; moveArm(165.00, 15.50, 59.50, 16.50, 80.40, 0.00); break;
+                case STEP_35: currentState = FINISHED; break;
                 case FINISHED:
                     Serial.println("Scoop Complete.");
                     currentState = IDLE;
