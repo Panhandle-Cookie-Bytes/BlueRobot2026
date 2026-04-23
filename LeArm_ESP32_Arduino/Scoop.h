@@ -67,11 +67,11 @@ public:
                 case STEP_19: currentState = STEP_20; moveArm(130.50, 120.00, 230.00, 170.60, 90.30, 240.00); break;
                 case STEP_20: currentState = STEP_21; moveArm(0.00, 120.00, 230.00, 170.60, 103.50, 240.00); break;
                 case STEP_21: currentState = STEP_22; moveArm(0.00, 125.60, 81.50, 43.00, 93.60, 120.00); break;
-                case STEP_22: currentState = STEP_23; moveArm(0.00, 120.00, 17.70, 34.20, 65.00, 233.30); break;
-                case STEP_23: currentState = STEP_24; moveArm(31.50, 120.00, 6.60, 14.30, 70.50, 240.00); break;
-                case STEP_24: currentState = STEP_25; moveArm(165.00, 120.00, 6.60, 14.30, 70.50, 240.00); break;
-                case STEP_25: currentState = STEP_26; moveArm(165.00, 120.00, 45.10, 71.50, 71.60, 240.00); break;
-                case STEP_26: currentState = STEP_27; moveArm(165.00, 120.00, 45.10, 71.50, 133.20, 128.90); break;
+                case STEP_22: currentState = STEP_23; moveArm(0.00, 117.8, 17.70, 34.20, 65.00, 233.30); break;
+                case STEP_23: currentState = STEP_24; moveArm(0, 113.4, 39.6, 0, 76, 240); break;
+                case STEP_24: currentState = STEP_25; moveArm(140, 113.4, 39.6, 0, 76, 240); break;
+                case STEP_25: currentState = STEP_26; moveArm(140, 113, 51.7, 0, 66.1, 240.00); break;
+                case STEP_26: currentState = STEP_27; moveArm(140, 110, 76, 54, 104.6, 240); break;
                 case STEP_27: currentState = STEP_28; moveArm(165.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
                 case STEP_28: currentState = STEP_29; moveArm(165.00, 160.70, 91.40, 69.40, 133.20, 135.50); break;
                 case STEP_29: currentState = STEP_30; moveArm(165.00, 84.80, 91.40, 69.40, 133.20, 77.20); break;
